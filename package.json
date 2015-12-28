@@ -1,6 +1,6 @@
 {
   "name": "kebab-case",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Convert a string to kebab-case, i.e. its dash separated form",
   "main": "index.js",
   "scripts": {
