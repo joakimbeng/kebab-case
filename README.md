@@ -1,6 +1,6 @@
 # kebab-case
 
-[![Build status][travis-image]][travis-url] [![NPM version][npm-image]][npm-url] [![XO code style][codestyle-image]][codestyle-url]
+[![NPM version][npm-image]][npm-url]
 
 > Convert a string to kebab-case, i.e. its dash separated form
 
@@ -25,11 +25,11 @@ npm install --save kebab-case
 ### Module usage
 
 ```javascript
-var kebabCase = require('kebab-case');
+var kebabCase = require("kebab-case");
 
-kebabCase('WebkitTransform');
+kebabCase("WebkitTransform");
 // "-webkit-transform"
-kebabCase.reverse('-webkit-transform');
+kebabCase.reverse("-webkit-transform");
 // "WebkitTransform"
 ```
 
@@ -37,27 +37,23 @@ kebabCase.reverse('-webkit-transform');
 
 ### `kebabCase(str)`
 
-| Name | Type | Description |
-|------|------|-------------|
-| str | `String` | The string to convert |
+| Name | Type     | Description           |
+| ---- | -------- | --------------------- |
+| str  | `String` | The string to convert |
 
 Returns: `String`, the kebab cased string.
 
 ### `kebabCase.reverse(str)`
 
-| Name | Type | Description |
-|------|------|-------------|
-| str | `String` | The string to convert back |
+| Name | Type     | Description                |
+| ---- | -------- | -------------------------- |
+| str  | `String` | The string to convert back |
 
 Returns: `String`, the "unkebab cased" string.
 
 ## License
 
-MIT © [Joakim Carlstein](http://joakim.beng.se/)
+MIT © [Joakim Carlstein](https://joakim.beng.se/)
 
 [npm-url]: https://npmjs.org/package/kebab-case
 [npm-image]: https://badge.fury.io/js/kebab-case.svg
-[travis-url]: https://travis-ci.org/joakimbeng/kebab-case
-[travis-image]: https://travis-ci.org/joakimbeng/kebab-case.svg?branch=master
-[codestyle-url]: https://github.com/sindresorhus/xo
-[codestyle-image]: https://img.shields.io/badge/code_style-XO-5ed9c7.svg?style=flat

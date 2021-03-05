@@ -4,7 +4,9 @@
   "description": "Convert a string to kebab-case, i.e. its dash separated form",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava"
+    "lint": "eslint *.js",
+    "pretest": "npm run lint -s",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -20,14 +22,14 @@
     "train-case",
     "lisp-case"
   ],
-  "author": "Joakim Carlstein <joakim.carlstein@gmail.com> (http://joakim.beng.se/)",
+  "author": "Joakim Carlstein <joakim.carlstein@gmail.com> (https://joakim.beng.se/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/joakimbeng/kebab-case/issues"
   },
   "homepage": "https://github.com/joakimbeng/kebab-case#readme",
   "devDependencies": {
-    "ava": "^0.8.0",
-    "xo": "^0.12.1"
+    "eslint": "^7.21.0",
+    "zora": "^4.0.2"
   }
 }
