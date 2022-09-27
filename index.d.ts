@@ -1,9 +1,9 @@
-type fn = (str: string) => string;
+type Fn = (str: string) => string;
 
-interface kebabCase extends fn {
-    reverse: fn
+interface KebabCase extends Fn {
+    reverse: Fn
 }
 
-const kebabCase: kebabCase;
+const kebabCase: KebabCase;
 
 export default kebabCase;
