@@ -26,3 +26,13 @@ test("the reverse", (t) => {
 	const str = "Hallå, Mr. Kebab Überstein! How you doin'?-";
 	t.equal(kebabCase.reverse(kebabCase(str)), str);
 });
+
+test("string with leading dash", (t) => {
+	const str = "KebabCase";
+	t.equal(kebabCase(str, false), "kebab-case");
+})
+
+test("string reverse without leading dash", (t) => {
+	const str = "-kebab-case";
+	t.equal(reverse(str), "KebabCase");
+})
