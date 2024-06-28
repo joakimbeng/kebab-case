@@ -1,15 +1,39 @@
-'use strict';
-var KEBAB_REGEX = /[A-Z\u00C0-\u00D6\u00D8-\u00DE]/g;
-var REVERSE_REGEX = /-[a-z\u00E0-\u00F6\u00F8-\u00FE]/g;
+const KEBAB_REGEX = /\p{Lu}/gu;
+const REVERSE_REGEX = /-\p{Ll}/gu;
 
-module.exports = exports = function kebabCase(str) {
-	return str.replace(KEBAB_REGEX, function (match) {
-		return '-' + match.toLowerCase();
-	});
+/**
+ * Transforms a string into kebab-case.
+ *
+ * @example
+ * kebabCase("helloWorld"); // "hello-world"
+ * kebabCase("HelloWorld"); // "-hello-world"
+ * kebabCase("HelloWorld", false); // "hello-world"
+ *
+ * @param {string} str The string to transform
+ * @param {boolean} keepLeadingDash Whether to keep the leading dash in case the string starts with an uppercase letter (default: true)
+ * @returns The kebab-cased string
+ */
+const kebabCase = (str, keepLeadingDash = true) => {
+	const result = str.replace(KEBAB_REGEX, (match) => `-${match.toLowerCase()}`);
+
+	if (keepLeadingDash) {
+		return result;
+	}
+
+	if (result.startsWith("-")) {
+		return result.slice(1);
+	}
 };
 
-exports.reverse = function (str) {
-	return str.replace(REVERSE_REGEX, function (match) {
-		return match.slice(1).toUpperCase();
-	});
-};
+/**
+ * Transforms a kebab-cased string back to the original string.
+ *
+ * @example
+ * kebabCase.reverse("hello-world"); // "helloWorld"
+ *
+ * @param {string} str
+ * @returns The original string, with the kebab-case transformation reversed
+ */
+kebabCase.reverse = (str) => str.replace(REVERSE_REGEX, (match) => match.slice(1).toUpperCase());
+
+export default kebabCase;

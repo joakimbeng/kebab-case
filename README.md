@@ -25,21 +25,24 @@ npm install --save kebab-case
 ### Module usage
 
 ```javascript
-var kebabCase = require("kebab-case");
+import kebabCase from "kebab-case";
 
 kebabCase("WebkitTransform");
 // "-webkit-transform"
 kebabCase.reverse("-webkit-transform");
 // "WebkitTransform"
+kebabCase("WebkitTransform", false);
+// "webkit-transform"
 ```
 
 ## API
 
 ### `kebabCase(str)`
 
-| Name | Type     | Description           |
-| ---- | -------- | --------------------- |
-| str  | `String` | The string to convert |
+| Name            | Type      | Description                                                 |
+| --------------- | --------- | ----------------------------------------------------------- |
+| str             | `String`  | The string to convert                                       |
+| keepLeadingDash | `Boolean` | Whether to keep the leading dash or not. Default is `true`. |
 
 Returns: `String`, the kebab cased string.
 
