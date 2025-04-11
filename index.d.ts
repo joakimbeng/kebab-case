@@ -11,7 +11,7 @@ export default kebabCase;
  * @param {boolean} keepLeadingDash Whether to keep the leading dash in case the string starts with an uppercase letter (default: true)
  * @returns The kebab-cased string
  */
-declare function kebabCase(str: string, keepLeadingDash?: boolean): string | undefined;
+declare function kebabCase(str: string, keepLeadingDash?: boolean): string;
 declare namespace kebabCase {
     /**
      * Transforms a kebab-cased string back to the original string.

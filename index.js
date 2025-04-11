@@ -23,6 +23,8 @@ const kebabCase = (str, keepLeadingDash = true) => {
 	if (result.startsWith("-")) {
 		return result.slice(1);
 	}
+
+	return result;
 };
 
 /**
@@ -34,6 +36,7 @@ const kebabCase = (str, keepLeadingDash = true) => {
  * @param {string} str
  * @returns The original string, with the kebab-case transformation reversed
  */
-kebabCase.reverse = (str) => str.replace(REVERSE_REGEX, (match) => match.slice(1).toUpperCase());
+kebabCase.reverse = (str) =>
+	str.replace(REVERSE_REGEX, (match) => match.slice(1).toUpperCase());
 
 export default kebabCase;

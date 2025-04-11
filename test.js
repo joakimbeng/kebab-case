@@ -1,5 +1,5 @@
-import { test } from 'node:test';
-import assert from 'node:assert';
+import { test } from "node:test";
+import assert from "node:assert";
 import kebabCase from "./index.js";
 
 test("string with uppercased letters", () => {
@@ -20,6 +20,11 @@ test("string with leading uppercased letters", () => {
 test("string with leading uppercased letters when ditching the leading slash", () => {
 	assert.strictEqual(kebabCase("WebkitTransform", false), "webkit-transform");
 	assert.strictEqual(kebabCase("Mr. Kebab", false), "mr. -kebab");
+});
+
+test("string without leading uppercased letters when ditching the leading slash", () => {
+	assert.strictEqual(kebabCase("webkitTransform", false), "webkit-transform");
+	assert.strictEqual(kebabCase("mr. Kebab", false), "mr. -kebab");
 });
 
 test("string with international uppercased letters", () => {
